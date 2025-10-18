@@ -3,15 +3,15 @@
 в противном случае уменьшить на 2. 
 '''
 try:
-    num = int(input("Введите двухзначное  число: "))
+    num = int(input("Введите двухзначное число: "))
 
     if 9 < num < 99:
-        one_dig = num // 10
-        two_dig = num % 10
+        one = num // 10
+        two = num % 10
     else:
         print("Введите двухзначное число.")
         
-    summ = one_dig + two_dig
+    summ = one + two
     
     if summ % 2 == 0:
         op_1 = num + 2
@@ -19,5 +19,5 @@ try:
     else:
         op_2 = num - 2
         print(op_2)
-except VallueError:
+except ValueError:
     print("Ошибка. Введите целое число.")

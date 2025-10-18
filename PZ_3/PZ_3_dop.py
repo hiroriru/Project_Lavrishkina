@@ -14,7 +14,7 @@ try:
       op_2 = mult * 1.5
       print(op_2)
       
-except VallueError:
+except ValueError:
     print("Пожалуйста, попробуйте снова.")
     
 

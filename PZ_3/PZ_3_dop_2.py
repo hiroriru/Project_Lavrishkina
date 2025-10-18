@@ -10,5 +10,5 @@ try:
     elif num % 2 != 0:
         op_2 = num * 5
         print(op_2)
-except VallueError:
-    print("Введите число корректнее.")
+except ValueError:
+    print("Ошибка.Введите число заново.")
