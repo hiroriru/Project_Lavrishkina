@@ -36,6 +36,4 @@ while True:
         
     except ValueError:
         print("Ошибка: введите числа корректно!")
-    except KeyboardInterrupt:
-        print("\nПрограмма прервана. До свидания!")
         break
