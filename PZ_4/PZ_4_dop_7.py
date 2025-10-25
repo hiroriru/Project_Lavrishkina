@@ -7,7 +7,7 @@ while True:
     try:
         a = int(input("Введите первое целое число: "))
         b = int(input("Введите второе целое число: "))
-        if a > b:
+        if a >= b:
             print("Первое число должно быть меньше второго  числа! Попробуйте снова.")
             continue
         break
@@ -16,7 +16,8 @@ while True:
 total = 0
 current = b
 
-while current == a:
+while current >= a:
     print(current)
+    total = total + 1
     current = current - 1
-print("ДОДЕЛАТЬ")
+print(f"Количество чисел: {total}")
