@@ -12,17 +12,13 @@ while True:
         print("Ошибка! Введите целое число!")
 
 S = 0
+fact = 1
 i = 1
 
 while i <= n:
-    fact = 1
-    j = 1
-    while j <= i:
-        fact = fact * j
-        j = j + 1
-
+    fact = fact * i
     print(f"{i}! = {fact}")
     S = S + fact
-    i += 1
+    i = i + 1
 
-print(f"\nS = {S}")
+print(f"S = {S}")
