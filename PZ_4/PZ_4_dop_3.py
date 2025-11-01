@@ -9,4 +9,4 @@ while number <= 5:
     print(f"Квадрат числа {number}: {kvadrat}")
     print(f"Куб числа {number}: {kub}")
 
-    number += 1
+    number = number + 1
