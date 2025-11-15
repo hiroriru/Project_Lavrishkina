@@ -3,6 +3,7 @@
 размера 10, первый элемент которого равен A, второй равен B, а каждый 
 последующий элемент равен сумме всех предыдущих.
 '''
+import random
 N = int(input("Введите N (> 2): "))
 A = int(input("Введите A: "))
 B = int(input("Введите B: "))
@@ -10,11 +11,8 @@ B = int(input("Введите B: "))
 if N <= 2:
     print("Ошибка: N должно быть больше 2.")
 else:
-    lst = [0] * N
-    lst[0] = A
-    lst[1] = B
+    lst = [A, B]
+    for i in range(8):
+        lst.append(sum(lst))
 
-    for i in range(2, N):
-        lst[i] = sum(lst[:i])
-
-    print(lst)
+    print("Список:", lst)
