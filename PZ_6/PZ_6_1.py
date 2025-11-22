@@ -4,15 +4,20 @@
 последующий элемент равен сумме всех предыдущих.
 '''
 import random
-N = int(input("Введите N (> 2): "))
-A = int(input("Введите A: "))
-B = int(input("Введите B: "))
 
-if N <= 2:
-    print("Ошибка: N должно быть больше 2.")
-else:
-    lst = [A, B]
-    for i in range(8):
-        lst.append(sum(lst))
+try:
+    N = int(input("Введите N (> 2): "))
+    A = int(input("Введите A: "))
+    B = int(input("Введите B: "))
 
-    print("Список:", lst)
+    if N <= 2:
+        print("Ошибка: N должно быть больше 2.")
+    else:
+        lst = [A, B]
+        for i in range(8):
+            lst.append(sum(lst))
+
+        print("Список:", lst)
+
+except ValueError:
+    print("Упс. Произошла ошибка. Введите целое число.")
