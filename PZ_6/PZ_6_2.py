@@ -7,12 +7,10 @@ import random
 try:
     N = int(input("Введите размер списка N: "))
     
-    if N < 1:
-        print("Ошибка: N должно быть натуральным числом (>= 1).")
-    elif N < 3:
+    if N < 3:
         print("Локальных минимумов нет (нужно хотя бы 3 элемента).")
     else:
-        lst = [random.randint(-100, 100) for _ in range(N)]
+        lst = [random.randint(-50, 50) for _ in range(N)]
         print("Сгенерированный список:", lst)
 
         local_mins = []
