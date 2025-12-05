@@ -12,8 +12,10 @@ try:
         print("Ошибка: N должно быть больше 2.")
     else:
         lst = [A, B]
-        for i in range(8):
+        i = 0
+        while i < 8:
             lst.append(sum(lst))
+            i += 1
 
         print("Список:", lst)
 
