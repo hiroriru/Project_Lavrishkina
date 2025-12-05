@@ -17,10 +17,13 @@ try:
         print("Сгенерированный список:", lst)
 
         local_mins = []
-        for i in range(1, N - 1):
+        i = 1
+        
+        while i < N - 1:
             c = lst[i]
             left = lst[i - 1]
             right = lst[i + 1]
+            i += 1
 
             if c < left and c < right:
                 local_mins.append(c)
