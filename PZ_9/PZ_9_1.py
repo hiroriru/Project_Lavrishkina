@@ -13,3 +13,13 @@ bookMarket = {"Пушкин", "Достоевский", "Маяковский"}
 galery = {"Чехов", "Тютчев", "Пушкин"}
 
 need_book = {"Грибоедов", "Маяковский"}
+
+print("Магазины, где нельзя приобрести книги Грибоедова и Маяковского:")
+if not need_book & magistr:
+    print("Магистр")
+if not need_book & domBook:
+    print("ДомКниги")
+if not need_book & bookMarket:
+    print("БукМаркет")
+if not need_book & galery:
+    print("Галерея")
