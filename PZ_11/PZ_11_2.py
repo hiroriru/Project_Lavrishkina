@@ -2,11 +2,11 @@
 Составить генератор (yield), который переведет символы строки из верхнего
 регистра в нижний.
 '''
-from string import ascii_lowercase
-
 def translet(num):
-    num_1 = list(num)
-    yield [i for i in num if i in ascii_lowercase]
-num = 'Я хочу пойти домой и хорошенько выспаться, а потом почитать книгу.'
-num_2 = translet(num)
-print(num_2) #крч, пока так оставлю. мозги не работают.
+    yield from [i.lower() for i in num]
+
+num = 'Я хочУ пойти дОмОй и ХОРОШЕНЬКО выспаться, а ПОТОМ почитать книгу.'
+result = ''.join(translet(num))
+
+print(f'Исходная строка: {num}')
+print(f'Изменённая строка: {result}') #maybe попробую с помощью библиотеки но наврятли
