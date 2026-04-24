@@ -3,15 +3,17 @@
 '''
 import random
 
-matrix = [[random.randint(0, 20) for j in range(5)] for i in range(5)]
+n = int(input("Введите размер матрицы: "))
+
+matrix = [[ random.randint(0, 20) for j in range(n)] for i in range(n)]
 
 print("Исходная матрица:")
 for i in matrix:
     print(i)
 
-for i in range(len(matrix)):
-    matrix[i][0] = matrix[i][0] ** 3
+matrix = list(map(lambda row: [row[0] ** 3] + row[1:], matrix))
 
 print("\nМатрица после возведения первого столбца в куб:")
 for i in matrix:
     print(i)
+
