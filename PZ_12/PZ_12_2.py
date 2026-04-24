@@ -3,7 +3,10 @@
 '''
 import random
 
-matrix = [[random.randint(0, 20) for i in range(5)] for i in range(5)]
+n = int(input("Введите количество строк: "))
+m = int(input("Введите количество столбцов: "))
+
+matrix = [[random.randint(0, 20) for i in range(n)] for i in range(m)]
 
 print("Исходная матрица:")
 for row in matrix:
@@ -14,3 +17,4 @@ matrix = [[0 if elem > 10 else elem for elem in row] for row in matrix]
 print("\nИзменённая матрица:")
 for row in matrix:
     print(row)
+
