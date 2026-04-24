@@ -3,9 +3,10 @@
 '''
 import random
 
-n = int(input("Введите размер матрицы: "))
+n = int(input("Введите количество строк: "))
+m = int(input("Введите количество столбцов: "))
 
-matrix = [[ random.randint(0, 20) for j in range(n)] for i in range(n)]
+matrix = [[ random.randint(0, 20) for j in range(n)] for i in range(m)]
 
 print("Исходная матрица:")
 for i in matrix:
