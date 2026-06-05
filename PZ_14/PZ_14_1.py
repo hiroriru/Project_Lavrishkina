@@ -8,31 +8,25 @@ import tkinter as tk
 def register():
     print("Registration submitted!")
 
-# 1. Главное окно — без излишеств
 root = tk.Tk()
 root.title("Event Registration Form")
-root.geometry("600x650")  # Точная высота: только под форму
+root.geometry("600x550") 
 root.resizable(False, False)
 
-# 2. Белая форма — без расширения, строго по контенту
 form_frame = tk.Frame(root, bg="white", bd=1, relief="solid")
-form_frame.pack(padx=40, pady=20)  # НЕ fill/expand!
+form_frame.pack(padx=40, pady=20)  
 
-# Заголовок
 header = tk.Label(form_frame, text="EVENT REGISTRATION FORM",
                   bg="black", fg="white", font=("Arial", 16, "bold"), pady=12)
 header.pack(fill="x")
 
-# Контент — grid, без expand, без лишних отступов
 content = tk.Frame(form_frame, bg="white")
-content.pack(padx=20, pady=10)  # Минимум отступов
+content.pack(padx=20, pady=10) 
 
-# Установим общую ширину полей (в знакоместах) — чтобы все начинались и заканчивались в одном месте
-ENTRY_WIDTH = 40  # ← ключевой параметр: все Entry будут этой ширины
+ENTRY_WIDTH = 40 
 
 row = 0
 
-# === Name ===
 tk.Label(content, text="Name", bg="white", font=("Arial", 10)).grid(row=row, column=0, sticky="w", pady=(10, 5))
 
 first_entry = tk.Entry(content, width=ENTRY_WIDTH//2-1, font=("Arial", 10), bg="#f0f0f0", bd=1)
@@ -43,19 +37,16 @@ last_entry = tk.Entry(content, width=ENTRY_WIDTH//2 - 1, font=("Arial", 10), bg=
 last_entry.grid(row=row, column=2, pady=5)
 tk.Label(content, text="Last Name", bg="white", font=("Arial", 8), fg="#777").grid(row=row+1, column=2, sticky="w")
 
-# === Company ===
 row += 2
 tk.Label(content, text="Company", bg="white", font=("Arial", 10)).grid(row=row, column=0, sticky="w", pady=(10, 5))
 company_entry = tk.Entry(content, width=ENTRY_WIDTH+2, font=("Arial", 10), bg="#f0f0f0", bd=1)
 company_entry.grid(row=row, column=1, columnspan=2, pady=5)
 
-# === Email ===
 row += 1
 tk.Label(content, text="Email", bg="white", font=("Arial", 10)).grid(row=row, column=0, sticky="w", pady=(10, 5))
 email_entry = tk.Entry(content, width=ENTRY_WIDTH+2, font=("Arial", 10), bg="#f0f0f0", bd=1)
 email_entry.grid(row=row, column=1, columnspan=2, pady=5)
 
-# === Phone ===
 row += 1
 tk.Label(content, text="Phone", bg="white", font=("Arial", 10)).grid(row=row, column=0, sticky="w", pady=(10, 5))
 
@@ -67,7 +58,6 @@ phone_entry = tk.Entry(content, width=ENTRY_WIDTH//2-1, font=("Arial", 10), bg="
 phone_entry.grid(row=row, column=2, pady=5)
 tk.Label(content, text="Phone Number", bg="white", font=("Arial", 8), fg="#777").grid(row=row+1, column=2, sticky="w")
 
-# === Subject ===
 row += 2
 tk.Label(content, text="Subject", bg="white", font=("Arial", 10)).grid(row=row, column=0, sticky="w", pady=(10, 5))
 subject_var = tk.StringVar(value="Choose option")
@@ -81,7 +71,6 @@ subject_menu.config(width=ENTRY_WIDTH, font=("Arial", 10), bg="#f0f0f0", bd=1, a
 subject_menu["menu"].config(font=("Arial", 10), bg="white", bd=1)
 subject_menu.grid(row=row, column=1, columnspan=2, pady=5)
 
-# === Existing customer? ===
 row += 1
 tk.Label(content, text="Are you an existing customer?", bg="white", font=("Arial", 10)).grid(
     row=row, column=0, columnspan=3, sticky="w", pady=(20, 10))
@@ -94,18 +83,15 @@ no_rb = tk.Radiobutton(content, text="No", variable=existing_var, value="No",
 yes_rb.grid(row=row+1, column=1, sticky="w")
 no_rb.grid(row=row+1, column=2, sticky="w")
 
-# === REGISTER — в левом нижнем углу формы, без пустоты под ней ===
 row += 2
 register_btn = tk.Button(content, text="REGISTER", command=register,
                          bg="#e74c3c", fg="white", font=("Arial", 11, "bold"),
                          width=16, height=2, bd=1, relief="raised")
 register_btn.grid(row=row, column=0, sticky="w", pady=(25, 10))  # ← только слева, без columnspan
 
-# Важно: не даём content растягиваться!
 content.grid_columnconfigure(1, minsize=0)
 content.grid_columnconfigure(2, minsize=0)
 
-# Обработчик закрытия
 def on_closing():
     root.destroy()
 
