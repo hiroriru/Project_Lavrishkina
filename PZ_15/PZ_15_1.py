@@ -8,10 +8,8 @@ import sqlite3 as sq
 from data import initial_records 
 
 def init_db():
-    """Создает таблицу и вставляет 10 позиций, если таблица пуста."""
     with sq.connect("tourism.db") as con:
         cur = con.cursor()
-        # Создаем таблицу
         cur.execute("""CREATE TABLE IF NOT EXISTS tourists(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             client_surname TEXT NOT NULL,
