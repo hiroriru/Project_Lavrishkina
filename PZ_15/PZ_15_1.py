@@ -73,7 +73,11 @@ def show_all():
     with sq.connect("tourism.db") as con:
         cur = con.cursor()
         cur.execute("SELECT * FROM tourists")
-        print(list(map(lambda r: "ID:" + str(r[0]) + " | " + r[1] + " | " + r[2] + " | " + str(r[3]) + " | " + str(r[4]), cur.fetchall())))
+        print("\nВсе записи")
+        print(f"{'ID':<5} {'Дата':<12} {'Код':<8} {'Наименование':<25} {'Расходы':<15} {'Сумма':>10}")
+        print("-" * 80)
+        for row in cur.fetchall():
+            print(f"{row[0]:<5} {row[1]:<12} {row[2]:<8} {row[3]:<25} {row[4]:<15} {row[5]:>10}")
 
 def main():
     print("Запуск приложения 'ТУР'")
