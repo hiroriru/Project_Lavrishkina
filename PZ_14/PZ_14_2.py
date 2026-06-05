@@ -47,7 +47,6 @@ label_a.pack(pady=(5, 0))
 entry_a = tk.Entry(root)
 entry_a.pack(pady=5)
 
-# Метка и поле для B
 label_b = tk.Label(root, text="Введите B:")
 label_b.pack(pady=(5, 0))
 
