@@ -3,11 +3,7 @@
 страниц. Добавьте методы для чтения и записи книги
 '''
 class Book:
-    name = None
-    author = None
-    pages = None
-
-    def initial(self, name, author, pages):
+    def __init__(self, name, author, pages):
         self.name = name
         self.author = author
         self.pages = pages
@@ -42,8 +38,7 @@ class Book:
          return f"Название книги {self.name}, автор {self.author}, количество страниц {self.pages}, прочитанных страниц {self.current_page}"
 
 
-book1 = Book()
-book1.initial("1984", "Джордж Оруэлл", 328)
+book1 = Book("1984", "Джордж Оруэлл", 328)
 
 print(book1.read(50))  
 print(book1.read(300)) 

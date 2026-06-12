@@ -8,11 +8,23 @@ class Figure:
     def __init__(self, name):
         self.name = name
 
-    # Площадь и периметр будут переопределяться в классах-наследниках
     def get_area(self):
-        return 0 
+        if type(self).__name__ == "Square":
+            return self.side * self.side
+        elif type(self).__name__ == "Rectangle":
+            return self.width * self.height
+        elif type(self).__name__ == "Circle":
+            return 3.14159 * (self.radius * self.radius)
+        return 0
+
     def get_perimeter(self):
-        return 0  
+        if type(self).__name__ == "Square":
+            return 4 * self.side
+        elif type(self).__name__ == "Rectangle":
+            return 2 * (self.width + self.height)
+        elif type(self).__name__ == "Circle":
+            return 2 * 3.14159 * self.radius
+        return 0
 
     def show_info(self):
         print(self.name)
@@ -25,12 +37,6 @@ class Square(Figure):
         Figure.__init__(self, "Квадрат")
         self.side = side
 
-    def get_area(self):
-        return self.side * self.side
-
-    def get_perimeter(self):
-        return 4 * self.side
-
     def scale(self, chislo):
         self.side = self.side * chislo
 
@@ -41,12 +47,6 @@ class Rectangle(Figure):
         self.width = width 
         self.height = height
 
-    def get_area(self):
-        return self.width * self.height
-
-    def get_perimeter(self):
-        return 2 * (self.width + self.height)
-
     def is_square(self):
         return self.width == self.height
 
@@ -56,12 +56,6 @@ class Circle(Figure):
         Figure.__init__(self, "Круг")
         self.radius = radius
         self.pi = 3.14159
-
-    def get_area(self):
-        return self.pi * (self.radius * self.radius)
-
-    def get_perimeter(self):
-        return 2 * self.pi * self.radius
 
     def inflate(self, velichina):
         self.radius = self.radius + velichina
