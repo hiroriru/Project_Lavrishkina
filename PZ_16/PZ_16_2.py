@@ -22,7 +22,7 @@ class Figure:
 
 class Square(Figure):
     def __init__(self, side):
-        Figure.__init__(self, "Квадрат")
+        super().__init__(self, "Квадрат")
         self.side = side
 
     def get_area(self):
@@ -37,7 +37,7 @@ class Square(Figure):
 
 class Rectangle(Figure):
     def __init__(self, width, height):
-        Figure.__init__(self, "Прямоугольник")
+        super().__init__(self, "Прямоугольник")
         self.width = width 
         self.height = height
 
